@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes" /> 
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="apple-touch-icon" href="icons/icon.png">
+    <link rel="shortcut icon" type="image/png" href="icons/icon.png" />
+    <title>⛰</title>
+    <link rel="stylesheet" href="css/date.css" />
+    <link rel="stylesheet" href="css/pres.css" />
+  </head>
+  <body>
+    <div class="bigGuy nawt-print">
+      <div class="input-happou" contenteditable="true"><pre></pre></div>
+      <div class="type-of-happou"></div>
+    </div>
+    <div class="canvasDiv">
+      <canvas id="printedCanvas" width="1410px" height="960px"></canvas>
+    </div>
+    <div class="miscs nawt-print">
+      <textarea id="input-cache"></textarea>
+      <!-- Date input -->
+      <label for="dateInput"></label>
+      <input type="date" id="dateInput" />
+      <!-- Display date format -->
+      <p id="formattedDateLink"></p>
+      <button id="print-btn">PRNT</button>
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter x="0" y="0.2" width="1" height="0.6" id="solidTextBackground">
+            <feFlood flood-color="white" result="bg" />
+            <feMerge>
+              <feMergeNode in="bg" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+      </svg>
+      <div id="svg-canvas-cache"></div>
+    </div>
+    
+    <script>
+    document.addEventListener("DOMContentLoaded",()=>{["js/print.js","js/pres.js","js/date.js"].forEach(src=>{const script=document.body.appendChild(document.createElement("script"));script.src=src;script.onload=()=>script.remove()})});
+    </script>
+  </body>
+</html>

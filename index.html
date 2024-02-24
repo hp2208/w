@@ -1,0 +1,289 @@
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Moku</title>
+
+	<style>
+	  body {
+	    max-width:100vw;
+	    max-height:90vh;overflow:hidden;
+        
+	  }
+	  #b {
+                height:80vh;
+		display:block;
+		align-content:center;
+        text-align:center;
+        z-index: 0;
+	  }
+      * {
+        box-sizing: border-box;
+        outline: 0px solid transparent;
+        background-color:black !important; 
+        color:#900C3F !important;
+      }
+      a, h3, i{
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+	  a {
+		text-decoration: none;
+		margin-top: 10vh;
+	  }
+	  h3 {
+        font-size: 40px;
+        margin-top: 30vh;
+	  }
+      #w {
+        position:fixed;
+        bottom: 10px;
+        right: 10px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        z-index: 1;
+      }
+      #google_translate_element {
+        position:fixed;
+        bottom: 10px;
+        left: 10px;
+        z-index: 10;
+      }
+      #n , #p{
+        position:fixed;
+        top: 10vh;
+        width: 20vw;
+        height: 50vh;
+        opacity:0;
+        z-index: 1;
+      }
+      #n {
+        right: 0;
+      }
+      #p {
+        left: 0;
+      }
+      textarea {
+        position: fixed;
+        top: 10vh;
+        left: 10vw;
+        width: 80vw;
+        height: 50vh;
+        border-radius: 5px;
+        font-size:18px;
+        z-index: 2;
+        background-color:black;
+        color:darkred;
+      }
+      .hidden {
+        display: none;
+      }
+	  .swipedown {
+		animation: text 0.3s ease-in-out infinite alternate;
+	}
+	</style>
+</head>
+<body>
+  <audio src="" hidden></audio>
+
+  <button id="w">
+    <i>?</i>
+  </button>
+  <span id="n">
+  </span>
+  <span id="p">
+  </span>
+  <textarea hidden></textarea>
+  <div id="b">
+     <a>1/3</a>
+     <h3>エー</h3>
+  </div>
+
+
+
+<div id="google_translate_element"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'ja'}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+<script>
+var warray =[
+'1234。しつれい　ですが、おなまえは。おいくつ　ですか。Ｓｅｋｕｓｕ　さんは　かいしゃいん　ですか。あのかたは　どなた　ですか。Ｓｅｋｕｓｕ　さんは　ちゅうごくじん　ですか。Ｓｅｋｕｓｕ　さんは　ジャベットセンター　の　がくせい　ですか。Ｓｅｋｕｓｕ　さんも　ジャベットセンター　の　がくせい　ですか。Ｓｅｋｕｓｕ　さんの　かいしゃ　の　なまえは　なんですか。これは　なんですか。それは　ほんですか、じしょ　ですか。それは　なんの　ほんですか。Ｓｅｋｕｓｕ　さんの　ほんですか。このほんはだれの　ですか。それは　ボールペンですか、シャープペンシルですか。あれは　だれの　とけいですか。このかばんは　だれの　かばんですか。このかぎも　Ｓｅｋｕｓｕ　さんの　ですか。おくには　どちら　ですか。Ｓｅｋｕｓｕ　さんの　うちは　どちらですか。Ｓｅｋｕｓｕ　さんの　ケイタイ（でんわ）は　にほんの　ですか。Ｓｅｋｕｓｕ　さんの　でんわは　にほんの　ですか。いくら　ですか。Ｓｅｋｕｓｕさんは　いま　どこですか。すみません、ぎんこうは　どちら　ですか。ぎんこうは　なんじから　なんじまで　ですか。すみません、いま、なんじ　ですか。きょうは　かようび　ですか。かいわ　チェックは　なんようび　ですか。かいわ　チェックはなんじから　ですか。にほんご　の　べんきょうは　なんようび　から　なんようび　まで　ですか。やすみは　どようび　と　にちようび　ですか。すみません、にほんは　いま、なんじ　ですか。まいあさ、なんじ　に　おきますか。きょうは　べんきょうしますか、なんじから　なんじまで　べんきょうしますか。よるは　べんきょうしますか、なんじまで　べんきょうしますか。なんじ　に　ねますか。きのうの　ばん、なんじ　に　ねましたか。きのう、べんきょうしましたか。あしたは　べんきょうしますか。あさっては　やすみ　ですか。にちようびは　べんきょうしますか。にちようびは　なんじ　に　おきますか。にほんごは　なんじから　べんきょうしますか。なんじ　に　おわりますか。ひるやすみは　なんじから　なんじまで　ですか。しけんは　なんようび　ですか。けさ、なんじ　に　おきましたか。こんばん、なんじ　に　ねますか。Ｓｅｋｕｓｕ　さんの　かいしゃは　どちら　ですか。Ｓｅｋｕｓｕ　さんの　かいしゃの　やすみは　なんようび　ですか。Ｓｅｋｕｓｕさんの　かいしゃは　なんじから　なんじまで　ですか。あした、はたらきますか',
+'Sｅｋｕｓｕさん、まいにち、べんきょうしますか。 なんじ から なんじ まで べんきょうしますか。 きのうの ばん、べんきょうしましたか。 なんじまで べんきょうしましたか。 なんじに ねましたか。 まいにち、11じに ねますか。 せんしゅうの にちようび、どこへ いきましたか。 スーパーへ いきましたか。 ひとりで いきましたか。 スーパーへ なんで いきましたか。 なんじに かえりましたか。 あしたは がっこうへ いきますか。 あした、なんじから べんきょうしますか。なんじに おわりますか。 こんしゅうの どようび、デパートへ いきますか。 なんで だれと いきますか。 なんじにいきますか。 あした、なんにち ですか。 きんようびですか。 らいしゅうの きんようびは なんにち ですか。 べんきょうしますか。 にちようび、べんきょうしますか。 どこへ いきますか。 バイクで いきますか。 だれと いきますか。 こんげつは なんがつ ですか。 きょうは なんようび ですか。 あさっては なんにち ですか。 しがつ３０にちは なんようび ですか。 しがつ３０にちは べんきょうしますか。 どこへ いきますか。 せんしゅうの にちようび、どこへ だれと いきましたか。 バスで いきましたか。 なんじに かえりましたか。 すみません、Sｅｋｕｓｕさんの たんじょうびは なんがつ なんにち ですか。 Sｅｋｕｓｕさんは ことし、おいくつ ですか。 Sｅｋｕｓｕさんは にほんへ いきましたか。 いつ ベトナムへ かえりましたか。 Sｅｋｕｓｕさんは いつ にほんへ いきますか。 だれと いきますか。 いつ ベトナムへ かえりますか。 ２０２３ねん の です、なんがつなんにちわかりません',
+'0506。あしたはひまですか。センターのひるごはんはおいしいですか。あなたのいなかはしずかですか。ジャベットセンターのせんせいはしんせつですか。ラムさんはどんな人ですか。フックさんのへやはきれいですか。あなたのいなかのひとはしんせつですか。りょうのせいかつはどうですか。あなたのジャベットセンターのせいかつはどうですか。にほんごのベんきょうはどうですか。にほんごはむずかしいですか。きょうはさむいですか。レストランのたべものはどうですか。こんばんばいそがしいですか。うちはおおきいですか。かのしゅくだいはかんたんですか。にほんのたべものはやすいですか。りょうのせいかつはたのしいですか。ケータイはべんりですか。あなたのともだちのこいびとはきれいですか。にほんはどんなくにですか。あなたのまちはどんなところですか。ジャベットセンターはどんなかいしゃですか。THANK YOUはにほんごでなんでうか。あなたのおかあさんはどんなひとですか。どんなえいがをみますか。きょねんのたんじょうびにどんなプレゼントをもらいましたか。エアコンはベトナム語でなんですか。CDでにほんごをべんきょうしますか。おかあさんのたんじょうびになにをあげましたか。きのう、ともだちにおかねをかしましたか。だれにバイクをかりましたか。ひらがなとカタカナをならいましたか。にほんごのべんきょうはどうですか。にほんごはかんたんですか。2月14日にかのじょになにをあげますか。.あなたの　たんじょうび　は　いつですか。たんじょうびに　なにを　もらいましたか。これは　なんですか。ホッチキス、けしゴム、スプーン、はし、はさみ。もう、あさ（ひる）ごはんをたべましたか。なにをたべましたか。なんでたべましたか。あなたは　なんで　フォーをたべますか。もう、だい８かのあたらしいことばをべんきょうしましたか。たんとうせんせい　は　どなたですか。おもしろいですか。何でしゃしんをとりましたか。まいにち、だれににほんごをならいますか。せんせいは　どなたですか。どんなせんせいですか。JAVIET　センターのせんせいはどんなせんせいですか。あなたの　ケータイは　どこ　ですか。どこのですか、どうですか。あなたの　パソコンは　いくらですか。けさ、あさごはん　をたべましたか。それから、何をしましたか。あなたのふるさとはどこですか。あなたの　ふるさとは　どんなところ　ですか。ふるさとの　ゆうめいなたべもの　は　なんですか。わたしのケータイはべんりです。そして　あたらしいです。あなたのケータイはどんなケータイですか。ベトナムでゆうめいなところ　は　どこですか。私のとけいはべんりです。そしてきれいです。あなたのとけいは　どうですか。日本語のべんきょうは　どうですか。あなたのクラスのともだちは　どうですか。JAVIET　センターのりょうは　どうですか',
+'0708。あなたは日本語が分かりますか。 あなたは英語が分かりますか。 あなたは中国語が分かりますか。 あなたは漢字が分かりますか。 あなたは漢字が好きですか。 あなたは日本語が好きですか。 どうしてですか。 あなたは英語が好きですか。 あなたのお母さんは料理が上手ですか。 あなたのお父さんは料理が上手ですか。 あなたはスポーツがすきですか。どんなスポーツがすきですか。 あなたは音楽がすきですか。どんな音楽がすきですか。 あなたは映画がすきですか。どんな映画がすきですか。 あなたは果物がすきですか。どんな果物がすきですか。 あなたのクラスで誰が日本語がじょうずですか。 あなたのクラスで誰が歌がじょうずですか。 あなたのクラスで誰がダンスがじょうずですか。 あなたのクラスでサッカーがじょうずですか。 あなたのクラスで誰が絵がじょうずですか。 あなたのうちに車がありますか。 あなたのうちにテレビがありますか。 あなたはケータイがありますか。 今、どこですか。 どこにありますか。 週末は約束がありますか。何をしますか。 あなたはどうして日本語を勉強しますか。 あなたのうちに何がいますか。 あなたのうちに何があいますか。 あなたの教室に誰がいますか。 あなたのうちの近くに何がありますか。 あなたの部屋に何がありますか。 あなたのセンターの後ろに病院がありますか。 あなたの上に誰がいますか。 あなたの下に誰がいますか。 あなたの前に誰がいますか。 あなたの左に誰がいますか。 あなたの右に誰がいますか。 あなたの後ろに誰がいますか。 あなたの隣に誰がいますか。 あなたの近くに誰がいますか。 あなたと私の間に誰がいますか。 あなたの上に何がいますか。 あなたの下に何がいますか。 あなたの前に何がいますか。 あなたの左に何がいますか。 あなたの右に何がいますか。 あなたの後ろに何がいますか。 あなたの隣に何がいますか。 あなたの近くに何がいますか。 あなたと私の間に何がいますか。 あなたの上に何がありますか。 あなたの下に何がありますか。 あなたの前に何がありますか。 あなたの左に何がありますか。 あなたの右に何がありますか。 あなたの後ろに何がありますか。 あなたの隣に何がありますか。 あなたの近くに何がありますか。 あなたと私の間に何がありますか。 あなたの会社は日本のどこにありますか。 あなたの会社の名前は何ですか。 あなたの日本語センターはハイのどこにありますか。センターの名前は何ですか',
+'0910。あなたの　たんじょうび　は　いつですか。たんじょうびに　なにを　もらいましたか。これは　なんですか。ホッチキス、けしゴム、スプーン、はし、はさみ。もう、あさ（ひる）ごはんをたべましたか。なにをたべましたか。なんでたべましたか。あなたは　なんで　フォーをたべますか。もう、だい８かのあたらしいことばをべんきょうしましたか。たんとうせんせい　は　どなたですか。おもしろいですか。何でしゃしんをとりましたか。まいにち、だれににほんごをならいますか。せんせいは　どなたですか。どんなせんせいですか。JAVIET　センターのせんせいはどんなせんせいですか。あなたの　ケータイは　どこ　ですか。どこのですか、どうですか。あなたの　パソコンは　いくらですか。けさ、あさごはん　をたべましたか。それから、何をしましたか。あなたのふるさとはどこですか。あなたの　ふるさとは　どんなところ　ですか。ふるさとの　ゆうめいなたべもの　は　なんですか。わたしのケータイはべんりです。そして　あたらしいです。あなたのケータイはどんなケータイですか。ベトナムでゆうめいなところ　は　どこですか。私のとけいはべんりです。そしてきれいです。あなたのとけいは　どうですか。日本語のべんきょうは　どうですか。あなたのクラスのともだちは　どうですか。JAVIET　センターのりょうは　どうですか',
+'1112。あなたは日本語が分かりますか。 あなたは英語が分かりますか。 あなたは中国語が分かりますか。 あなたは漢字が分かりますか。 あなたは漢字が好きですか。 あなたは日本語が好きですか。 どうしてですか。 あなたは英語が好きですか。 あなたのお母さんは料理が上手ですか。 あなたのお父さんは料理が上手ですか。 あなたはスポーツがすきですか。どんなスポーツがすきですか。 あなたは音楽がすきですか。どんな音楽がすきですか。 あなたは映画がすきですか。どんな映画がすきですか。 あなたは果物がすきですか。どんな果物がすきですか。 あなたのクラスで誰が日本語がじょうずですか。 あなたのクラスで誰が歌がじょうずですか。 あなたのクラスで誰がダンスがじょうずですか。 あなたのクラスでサッカーがじょうずですか。 あなたのクラスで誰が絵がじょうずですか。 あなたのうちに車がありますか。 あなたのうちにテレビがありますか。 あなたはケータイがありますか。 今、どこですか。 どこにありますか。 週末は約束がありますか。何をしますか。 あなたはどうして日本語を勉強しますか。 あなたのうちに何がいますか。 あなたのうちに何があいますか。 あなたの教室に誰がいますか。 あなたのうちの近くに何がありますか。 あなたの部屋に何がありますか。 あなたのセンターの後ろに病院がありますか。 あなたの上に誰がいますか。 あなたの下に誰がいますか。 あなたの前に誰がいますか。 あなたの左に誰がいますか。 あなたの右に誰がいますか。 あなたの後ろに誰がいますか。 あなたの隣に誰がいますか。 あなたの近くに誰がいますか。 あなたと私の間に誰がいますか。 あなたの上に何がいますか。 あなたの下に何がいますか。 あなたの前に何がいますか。 あなたの左に何がいますか。 あなたの右に何がいますか。 あなたの後ろに何がいますか。 あなたの隣に何がいますか。 あなたの近くに何がいますか。 あなたと私の間に何がいますか。 あなたの上に何がありますか。 あなたの下に何がありますか。 あなたの前に何がありますか。 あなたの左に何がありますか。 あなたの右に何がありますか。 あなたの後ろに何がありますか。 あなたの隣に何がありますか。 あなたの近くに何がありますか。 あなたと私の間に何がありますか。 あなたの会社は日本のどこにありますか。 あなたの会社の名前は何ですか。 あなたの日本語センターはハイのどこにありますか。センターの名前は何ですか',
+'17。おなかが空きましたから、早く食べてもいいですか。 ベトナムの美術館で写真をとってもいいですか。 教室で電話をかけてもいいですか。 日本でどのくらい実習しなければなりませんか。 病気ですから、何をしなければなりませんか。 日本ヘパスポートをもっていかなくてもいいですか。 病院へ何をもっていかなければなりませんか。 日本へ何を持っていかなければなりませんか。 日本に行くまえに、何を準備しなければなりませんか。 日本人と話しています、言葉がわかりません、どうしますか。 日本に来ててから、何を注意しなければなりませんか。 勉強が終わってから、何をしなければなりませんか。 教室に入る前に、靴を脱がなければなりませんか。 休みの日も勉強しなければなりませんか。 休みの日に日本語を勉強しなくてもいいですか。 日本に行きますね、漢字を勉強しなくてもいいですか。 日曜日教室を掃除しなくてもいいですか。 日本のうちで靴を履いてもいいですか。 会社を休みたいですから、何をしなければなりません。 試験の紙にボールペンでかいてもいいですか。 ここでタバコを吸ってもいいですか。 時間がありますから、急いでもいいですか。 電話の暗証番号を忘れてもいいですか。 人がたくさんいますから、うしろから押してもいいですか。 エアコンをつけています、ドアをあけてもいいですか。 漢字がわかりませんから、ひらがなでかいてもいいですか。 試験がありますから、何をしなければなりませんか。 こんばんはレストランで食べますから、食事をつくらなくてもいいですか。 日曜日は早く起きなければなりませんか。 このレポートはいつまでに出さなければなりませんか。 病気ですから、どうしますか。 熱がありますから、何をしなければなりませんか。 授業中話してもいいですか。 肉や魚を負いました、今から何をしなければなりませんか。 授業が終わってから何をしなければなりませんか。 べトナムで子供はお金を払わなければなりませんか。 土曜日は会社へいかなければなりませんか。 仕事が終わりました、残業しなければなりませんか。 毎日漢学をいくつ覚えなければなりませんか。 勉強が終わってから何をしなければなりませんか。 パスポートをなくしました、どうしますか。 パスポートをなくしました、何をしなければなりませんか。 恋人の誕生日を忘れてもいいですか。 図書館の本をなくしてもいいですか。 ここでタバコを吸ってもいいですか。 スーパーへ何を持っていかなければなりませんか。 雨が降っていますから、何を持っていかなければなりませんか。 キャッシュカードをなくしますした、何をしなければなりませんか。 テレビをみたいです、何をしなければなりませんか。 外は寒いです、何をしなければなりませんか。 毎日日本語を話さなければなりませんか。 あなたの国で子供は何歳から学校へいかなければなりませんか ',
+''];
+var indx = 0;
+</script>
+<script>
+!function(doc,win){if("function"!=typeof doc.createEvent)return;function pointerEvent(type){var lo=type.toLowerCase(),ms="MS"+type;return navigator.msPointerEnabled?ms:!!window.PointerEvent&&lo}function touchEvent(name){return"on"+name in window&&name}function isTheSameFingerId(e){return!e.pointerId||void 0===pointerId||e.pointerId===pointerId}function setListener(elm,events,callback){for(var eventsArray=events.split(" "),i=eventsArray.length;i--;)elm.addEventListener(eventsArray[i],callback,!1)}function getPointerEvent(event){var hasTargetTouches=Boolean(event.targetTouches&&event.targetTouches.length);switch(!0){case Boolean(event.target.touches):return event.target.touches[0];case hasTargetTouches&&void 0!==event.targetTouches[0].pageX:return event.targetTouches[0];case hasTargetTouches&&Boolean(event.targetTouches[0].touches):return event.targetTouches[0].touches[0];default:return event}}function isMultipleTouches(event){return 1<(event.targetTouches||event.target.touches||[]).length}function getTimestamp(){return(new Date).getTime()}function sendEvent(elm,eventName,originalEvent,data){var customEvent=doc.createEvent("Event");if(customEvent.originalEvent=originalEvent,(data=data||{}).x=currX,data.y=currY,defaults.useJquery&&(customEvent=jQuery.Event(eventName,{originalEvent:originalEvent}),jQuery(elm).trigger(customEvent,data)),customEvent.initEvent){for(var key in data)customEvent[key]=data[key];customEvent.initEvent(eventName,!0,!0),elm.dispatchEvent(customEvent)}for(;elm;)elm["on"+eventName]&&elm["on"+eventName](customEvent),elm=elm.parentNode}var pointerId,currX,currY,cachedX,cachedY,timestamp,target,dblTapTimer,longtapTimer,defaults={useJquery:!win.IGNORE_JQUERY&&"undefined"!=typeof jQuery,swipeThreshold:win.SWIPE_THRESHOLD||100,tapThreshold:win.TAP_THRESHOLD||150,dbltapThreshold:win.DBL_TAP_THRESHOLD||200,longtapThreshold:win.LONG_TAP_THRESHOLD||1e3,tapPrecision:win.TAP_PRECISION/2||30,justTouchEvents:win.JUST_ON_TOUCH_DEVICES},wasTouch=!1,touchevents_touchstart=touchEvent("touchstart")||pointerEvent("PointerDown"),touchevents_touchend=touchEvent("touchend")||pointerEvent("PointerUp"),touchevents_touchmove=touchEvent("touchmove")||pointerEvent("PointerMove"),tapNum=0;setListener(doc,touchevents_touchstart+(defaults.justTouchEvents?"":" mousedown"),function(e){if(isTheSameFingerId(e)&&!isMultipleTouches(e)&&(pointerId=e.pointerId,"mousedown"!==e.type&&(wasTouch=!0),"mousedown"!==e.type||!wasTouch)){var pointer=getPointerEvent(e);cachedX=currX=pointer.pageX,cachedY=currY=pointer.pageY,longtapTimer=setTimeout(function(){sendEvent(e.target,"longtap",e),target=e.target},defaults.longtapThreshold),timestamp=getTimestamp(),tapNum++}}),setListener(doc,touchevents_touchend+(defaults.justTouchEvents?"":" mouseup"),function(e){if(isTheSameFingerId(e)&&!isMultipleTouches(e))if(pointerId=void 0,"mouseup"===e.type&&wasTouch)wasTouch=!1;else{var eventsArr=[],now=getTimestamp(),deltaY=cachedY-currY,deltaX=cachedX-currX;if(clearTimeout(dblTapTimer),clearTimeout(longtapTimer),deltaX<=-defaults.swipeThreshold&&eventsArr.push("swiperight"),deltaX>=defaults.swipeThreshold&&eventsArr.push("swipeleft"),deltaY<=-defaults.swipeThreshold&&eventsArr.push("swipedown"),deltaY>=defaults.swipeThreshold&&eventsArr.push("swipeup"),eventsArr.length){for(var i=0;i<eventsArr.length;i++){var eventName=eventsArr[i];sendEvent(e.target,eventName,e,{distance:{x:Math.abs(deltaX),y:Math.abs(deltaY)}})}tapNum=0}else cachedX>=currX-defaults.tapPrecision&&cachedX<=currX+defaults.tapPrecision&&cachedY>=currY-defaults.tapPrecision&&cachedY<=currY+defaults.tapPrecision&&0<=timestamp+defaults.tapThreshold-now&&(sendEvent(e.target,2<=tapNum&&target===e.target?"dbltap":"tap",e),target=e.target),dblTapTimer=setTimeout(function(){tapNum=0},defaults.dbltapThreshold)}}),setListener(doc,touchevents_touchmove+(defaults.justTouchEvents?"":" mousemove"),function(e){if(isTheSameFingerId(e)&&("mousemove"!==e.type||!wasTouch)){var pointer=getPointerEvent(e);currX=pointer.pageX,currY=pointer.pageY}}),win.tocca=function(options){for(var opt in options)defaults[opt]=options[opt];return defaults}}(document,window);
+</script>
+<script>
+  var body = document.querySelector('div');
+  var audio = document.querySelector('audio');
+  var a = document.querySelector('a');
+  var h3 = document.querySelector('h3');
+  var txta = document.querySelector('textarea');
+  var w = document.getElementById('w');
+  var n = document.getElementById('n');
+  var p = document.getElementById('p');
+  var synth = window.speechSynthesis;
+  var words = ['エー','ビー','シー'], index = 1, len = 3;
+  var ggtts = true;
+txta.addEventListener('swipeleft',function(e){
+  if(indx==warray.length) {
+      indx = 1;
+    } else {
+      indx++;
+    }
+  txta.value = warray[indx-1];
+  a.innerHTML = indx;
+});
+txta.addEventListener('swiperight',function(e){
+  if(indx==1) {
+      indx = warray.length;
+    } else {
+      indx--;
+    }
+  txta.value = warray[indx-1];
+  a.innerHTML = indx;
+});
+body.addEventListener('tap',function(e){
+    // Make noise
+   makeNoise(words[index-1],'1');
+});
+body.addEventListener('dbltap',function(e){
+  // Make slower noise
+  makeNoise(words[index-1],'0.24');
+});
+body.addEventListener('longtap',function(e){
+  //Mix
+  mix();
+});
+body.addEventListener('swipeleft',function(e){
+  // NEXT
+  next();
+});
+body.addEventListener('swiperight',function(e){
+  // PREV
+  prev();
+});
+body.addEventListener('swipeup',function(e){
+
+  // Change type LISTEN-READING
+  h3.classList.toggle("hidden");
+});
+body.addEventListener('swipedown',function(e){
+  // Change type GG-Syn-TTS
+  if(ggtts){
+    synTTS('オフラインモード','1');
+    body.style.color = '#FF5733';
+  } else {
+    synTTS('オンラインモード','1');
+    body.style.color = '#900C3F';
+  }
+  ggtts = !ggtts;
+});
+  txta.addEventListener('focusout',function() {
+    txta.hidden = true;
+    newWord();
+  });
+  w.addEventListener('click',function() {
+    txta.hidden = false;
+    txta.focus();
+  });
+  n.addEventListener('click',function() {
+    next();
+  });
+  p.addEventListener('click',function() {
+    prev();
+  });
+  function makeNoise(text, speed)
+  {
+    if(ggtts) {
+      ggTTS(text,speed);
+    } else {
+      synTTS(text,speed);
+    }
+  }
+  function ggTTS(text, ttsspeed) {
+    text = encodeURI(text);
+    var url = 'http://translate.google.com/translate_tts?ie=UTF-8&q=' + text + '&tl=ja&client=tw-ob&ttsspeed=' + ttsspeed;
+    audio.src = url;
+    audio.load();
+    audio.play();
+  }
+  function synTTS(text, ttsspeed) { 
+if(synth.speaking) {
+try{
+synth.pause();
+}catch(err){}}
+    var rate = 0.5;
+	if(ttsspeed=='1') {
+		rate = 1;
+	}
+    var utterThis = new SpeechSynthesisUtterance(text);
+    utterThis.lang = 'ja-JP';
+    utterThis.pitch = 1;
+    utterThis.rate = rate;
+    synth.speak(utterThis);
+
+  }
+  
+  function newWord() {
+    words = txta.value.split('。');
+    index = 1;
+    len = words.length;
+    ini();
+  }
+  function next() {
+    if(index==len) {
+      index = 1;
+    } else {
+      index++;
+    }
+    ini();
+  }
+  function prev() {
+    if(index==1) {
+      index = len;
+    } else {
+      index--;
+    }
+    ini();
+  }
+  function ini() {
+    a.innerHTML = index + '/' + len;
+    h3.innerHTML = words[index-1];
+    makeNoise(words[index-1],'1');
+  }
+  function mix() {
+    words = mixArray(words);
+    index = 1;
+    ini();
+  }
+  function mixArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] =
+      [array[j], array[i]];
+    }
+    return array;
+}
+
+  
+</script>
+</body>
+</html>

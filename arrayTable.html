@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<meta name="robots" content="noindex">
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes" /> 
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="apple-touch-icon" href="icons/icon.png">
+  <link rel="shortcut icon" type="image/png" href="icons/icon.png" />
+  <title>⛰</title>
+<style id="jsbin-css">
+* {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+body {
+  background: black;
+  color: white;
+}
+button, table {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+button {
+  background: olive;
+  border: 1px gray solid;
+  color: white;
+  padding: 5px 10px;
+  margin: 2px;
+  width: 45px;
+  border-radius: 3px;
+}
+#convertFirstTable {
+  position: fixed;
+  top: 10px;
+  right: 58px;
+}
+#convertSecondTable {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+textarea {
+  width: 100%;
+  font-size:16px;
+  padding: 5px 10px;
+  resize: vertical;
+  background: black;
+  color: white;
+  border-radius: 3px;
+}
+table {
+  border-collapse: collapse;
+  width: auto;
+  margin-bottom: 100px;
+}
+
+th, td {
+  border: 0px solid #dddddd;
+  padding: 8px;
+  cursor: pointer;
+  user-select: none; /* Prevent text selection */
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+/* Apply different font sizes to each column */
+td:nth-child(1) {
+  width: 40px;
+  font-size: 12px;
+  text-align: right;
+}
+
+td:nth-child(2) {
+  width: 70px;
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+}
+
+td:nth-child(3) {
+  width: 70px;
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+}
+
+td:nth-child(4) {
+  width: 50px;
+  font-size: 24px;
+  text-align: center;
+}
+
+td:nth-child(5) {
+  width: 50px;
+  font-size: 20px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+    <textarea id="inputText" rows="10"></textarea>
+    <br>
+    <button id="convertFirstTable">1st</button>
+    <br>
+    <button id="convertSecondTable">2nd</button>
+    <br>
+    <br>
+    <table id="firstTable"></table>
+    <table id="secondTable"></table>
+
+<script id="jsbin-javascript">
+document.getElementById("convertFirstTable").addEventListener("click", function() {
+  // Get the textarea value
+  var inputText = document.getElementById('inputText').value.replace(/ +(?= )/g,'').trim();
+  if(inputText!=="") {
+    // Ensure the first line contains a letter, if not, add a hyphen line
+    const lines = inputText.split('\n');
+    if (lines.length > 0 && !/[a-zA-Z]/.test(lines[0])) {
+      lines.unshift('-');
+    }
+
+    // Remove all empty lines
+    inputText = lines.filter(line => line.trim() !== '').join('\n');
+
+    arrayToTable(bindTextToArray(inputText), 'firstTable');
+  }
+  document.getElementById('inputText').value = '';
+});
+
+document.getElementById("convertSecondTable").addEventListener("click", function() {
+  arrayToTable(tableToArray("firstTable"),"secondTable");
+});
+
+
+function tableToArray(tableId) {
+  const filteredRows = [];
+
+  // Get the table element
+  const table = document.getElementById(tableId);
+
+  // Iterate over the rows and filter based on the 4th column value
+  for (let i = 0; i < table.rows.length; i++) {
+    const row = table.rows[i];
+    if(row.cells.length > 2) {
+      const fourthColumnValue = parseInt(row.cells[3].textContent, 10);
+      var rowData = [];
+
+      if (fourthColumnValue > 0) {
+        // Iterate through each cell in the row
+        for (var j = 0; j < row.cells.length; j++) {
+          if (j === 1 || j === 2 || j === 3) {
+            rowData.push(parseInt(row.cells[j].innerText, 10));
+          } else if (j==4) {
+            let textValue = row.cells[j].innerText;
+            let numberValue;
+            switch(textValue) {
+              case "∟":
+                if(row.cells[j].style.backgroundColor == "green"){
+                  numberValue = 1;
+                } else {
+                  numberValue = 2;
+                }
+                break;
+              case "⊏":
+                numberValue = 3;
+                break;
+              case "⊡":
+                numberValue = 4;
+                break;
+              case "H85":
+                numberValue = 5;
+                break;
+            }
+            rowData.push(numberValue);
+          } else {
+            rowData.push(row.cells[j].innerText);
+          }
+        }
+
+        // Add the row data to the main array
+        filteredRows.push(rowData);
+      }
+    }
+
+  }
+
+  return filteredRows;
+}
+
+
+function arrayToTable(array, tableID) {
+
+  // Get the table
+  var table = document.getElementById(tableID);
+  table.innerHTML = '';
+
+  const updateCell = (cell, value, columnIndex) => {
+    cell.textContent = value;
+
+    if (columnIndex === 3) {
+      if (value > 0) {
+        cell.style.backgroundColor = "maroon";
+        cell.style.color = "white";
+      } else {
+        cell.style.backgroundColor = "black";
+        cell.style.color = "black";
+      }
+    } else if (columnIndex === 4) {
+      switch (value) {
+        case 1:
+          cell.style.backgroundColor = "olive";
+          cell.style.color = "white";
+          cell.textContent = "∟";
+          break;
+        case 2:
+          cell.style.backgroundColor = "black";
+          cell.style.color = "white";
+          cell.textContent = "∟";
+          break;
+        case 3:
+          cell.style.backgroundColor = "olive";
+          cell.style.color = "white";
+          cell.textContent = "⊏";
+          break;
+        case 4:
+          cell.style.backgroundColor = "black";
+          cell.style.color = "white";
+          cell.textContent = "⊡";
+          break;
+        case 5:
+          cell.style.backgroundColor = "GoldenRod";
+          cell.style.color = "white";
+          cell.textContent = "H85";
+          break;
+        default:
+          cell.style.backgroundColor = "black";
+          cell.style.color = "white";
+          break;
+      }
+    }
+  };
+  const handleClick = (cell, rowIndex, columnIndex) => {
+
+    let originalValue = array[rowIndex][columnIndex];
+    return () => {
+
+      if (columnIndex === 3) {
+        if (array[rowIndex][3] > 0) {
+          array[rowIndex][3] -= 1;
+        } else {
+          array[rowIndex][3] = originalValue;
+        }
+      } else if (columnIndex === 4) {
+        array[rowIndex][4] = (array[rowIndex][4] % 5) + 1;
+      }
+
+      updateCell(cell, array[rowIndex][columnIndex], columnIndex);
+    };
+  };
+
+
+
+  // Populate the table with array data
+  for (let rowIndex = 0; rowIndex < array.length; rowIndex++) {
+    const tr = table.insertRow();
+
+    for (let colIndex = 0; colIndex < array[rowIndex].length; colIndex++) {
+      const cell = tr.insertCell();
+
+      if (colIndex === 3) {
+        updateCell(cell, array[rowIndex][colIndex], colIndex);
+        cell.addEventListener('click', handleClick(cell, rowIndex, colIndex));
+      }else if (colIndex === 4) {
+        updateCell(cell, array[rowIndex][colIndex], colIndex);
+        cell.addEventListener('click', handleClick(cell, rowIndex, colIndex));
+      } else {
+        cell.textContent = array[rowIndex][colIndex];
+      }
+    }
+  }
+
+}
+function bindTextToArray(inputText) {
+  var a099 = [], a100599 = [],
+      a600899_299 = [], a600899_300 = [],
+      a900 = [], a1000 = [],
+      bigOne = [], bigTwo = [];
+
+  // Split the input into rows
+  var lines = inputText.split('\n');
+  let currentHeader = '';
+
+  for (let line of lines) {
+    if (/[a-zA-Z\-]/.test(line)) {
+      // Single character lines represent headers
+      currentHeader = line;
+    } else {
+      // Split the line into values
+      const values = line.trim().split(' ').map(value => parseInt(value, 10));
+      // Assign default values if not provided
+      switch (values.length) {
+        case 1: values.push(values[0], 1, 2); break;
+        case 2: values.push(1, 2); break;
+        case 3: values.push(2); break;
+      }
+      // Add the current header as the first element
+      // Add the array of values to the result arrays
+      if(values[1]<=99) {
+        a099.push([currentHeader, ...values]);
+      } else if(values[0]>=100&&values[0]<=599) {
+        a100599.push([currentHeader, ...values]);
+      } else if(values[0]>=600&&values[0]<=899) {
+        if(values[1]<=299) {
+          a600899_299.push([currentHeader, ...values]);
+        } else {
+          a600899_300.push([currentHeader, ...values]);
+        }
+      } else if(values[0]>=900&&values[0]<=999) {
+        a900.push([currentHeader, ...values]);
+      } else {
+        a1000.push([currentHeader, ...values]);
+      }
+    }
+  }
+
+
+
+
+  //bigTwo = a099.concat(a100599, a600899_299, a600899_300, a900, a1000)
+  //console.log("B2", bigTwo);
+
+  bigOne = sortMergeArray(a099, 2, 1, 4, 0, 3)
+    .concat([["-"]],
+            sortMergeArray(a600899_300, 1, 2, 4, 0, 3),
+            sortMergeArray(a1000, 1, 2, 4, 0, 3),[["-"]],
+            sortMergeArray(a600899_299, 1, 2, 4, 0, 3),
+            sortMergeArray(a900, 1, 2, 4, 0, 3),[["-"]],
+            sortMergeArray(a100599, 1, 2, 4, 0, 3));
+  //console.log("B1", bigOne);
+  return bigOne;
+
+}
+
+
+// Function to sort by ABCD and merge by E array
+function sortMergeArray(array, a, b, c, d, e) {
+  array.sort(function (x, y) {
+    // Compare by A first
+    if (x[a] < y[a]) {
+      return -1;
+    } else if (x[a] > y[a]) {
+      return 1;
+    }
+    // Compare by B
+    if (x[b] < y[b]) {
+      return -1;
+    } else if (x[b] > y[b]) {
+      return 1;
+    }
+    // Compare by C
+    if (x[c] < y[c]) {
+      return -1;
+    } else if (x[c] > y[c]) {
+      return 1;
+    }
+    // Compare by D
+    if (x[d] < y[d]) {
+      return -1;
+    } else if (x[d] > y[d]) {
+      return 1;
+    }
+  });
+
+  const mergedArray = [];
+
+  // Create a map to store merged values
+  const mergeMap = new Map();
+
+  array.forEach(childArray => {
+    const key = [childArray[a], childArray[b], childArray[c], childArray[d]].toString();
+
+    if (mergeMap.has(key)) {
+      // Merge if the key already exists
+      mergeMap.get(key)[e] += childArray[e];
+    } else {
+      // Add a new entry to the map
+      mergeMap.set(key, [...childArray]);
+    }
+  });
+
+  // Convert the map values back to an array
+  mergeMap.forEach(value => {
+    mergedArray.push(value);
+  });
+
+
+  return mergedArray;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .bigGuy {
+    width: 95vw;
+    height: 100vh;
+  }
+  .tooltiptext {
+    right: 0px;
+  }
+  .canvasDiv {
+    display: none;
+  }
+}
+
+/* Large devices (laptops/desktops, 601px and up) */
+@media only screen and (min-width: 601px) {
+  .bigGuy {
+    width: 40vw;
+    height: 95vh;
+  }
+  .tooltiptext {
+    left: calc(40vw + 15px);
+  }
+  .canvasDiv {
+    width: calc(60vw - 35px);
+    height: calc(100vh - 30px);
+    top: 8px;
+    left: calc(40vw + 15px);
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .bigGuy {
+    width: 30vw;
+    height: 33vh;
+  }
+  .tooltiptext {
+    left: calc(30vw + 15px);
+  }
+  .canvasDiv {
+    width: calc(70vw - 35px);
+    height: calc(100vh - 300px);
+    top: 250px;
+    left: calc(30vw + 15px);
+  }
+}
+
+* {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+/* Style the div elements */
+.bigGuy {
+  border: 3px solid gray;
+  border-radius: 5px;
+}
+.canvasDiv {
+  border: 2px solid gray;
+  border-radius: 5px;
+  position: fixed;
+  overflow: auto;
+}
+#printedCanvas {
+  margin: 5px;
+}
+.input-happou {
+  width: calc(100% - 50px);
+  height: 100%;
+  padding: 10px 0 10px 10px;
+  overflow: auto;
+  display: inline-block;
+}
+.type-of-happou {
+  text-align: center;
+  width: 50px;
+  height: 100%;
+  padding: 10px 0 10px 0;
+  overflow: auto;
+  display: inline-block;
+  /*border: 1px solid black;*/
+  margin-left: -10px;
+
+  -moz-user-select: text;
+  -khtml-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+[contenteditable] {
+  outline: 0px solid transparent;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.input-happou::-webkit-scrollbar {
+  display: none;
+}
+.type-of-happou::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.input-happou .type-of-happou {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Style the pre elements based on their classes */
+pre {
+  font-family: monospace;
+  font-size: 22px;
+  color: black;
+  background-color: white;
+  margin: 0 auto;
+}
+
+.date-line {
+  font-size: 30px;
+  background-color: #ff5100;
+  color: white;
+}
+
+.empty-line {
+  font-size: 22px;
+  color: black;
+  background-color: white;
+}
+
+
+
+.product-line {
+  font-size: 30px;
+  color: black;
+  background-color: #0096ff;
+  text-transform: uppercase;
+}
+
+.happou-line {
+  font-size: 22px;
+  color: black;
+  background-color: white;
+}
+
+.error-line {
+  font-size: 22px;
+  color: white;
+  background-color: #dc143c;
+}
+
+
+.tooltiptext {
+  display: none;
+  position: fixed;
+  top: 8px;
+  width: auto;
+  height: auto;
+  border-radius: 3px;
+  border: solid 2px gray;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 999;
+}
+
+.tooltip:hover .tooltiptext {
+  display: block !important;
+  z-index: 9999 !important;
+  background: rgba(255, 255, 255, 0.95);
+  top: var(--mouse-y) !important;
+}
+
+
+.tooltip{
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-size: 40% !important;
+}
+
+.counters-happou {
+  font-size: 18px;
+  font-weight: bolder;
+}
+text {
+  font-size: 18px !important;
+}
+
+#svg-canvas-cache {
+  display: none;
+}
+#input-cache {
+  display: none;
+  height: 300px;
+}
+#print-btn {
+  width: auto;
+  height: 30px;
+  font-size: 22px;
+  border: 3px solid gray;
+  border-radius: 5px;
+  position: fixed;
+  bottom: 5px;
+  right: 180px;
+  background-color: white;
+}
