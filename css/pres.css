@@ -162,7 +162,6 @@ pre {
 text {
   font-size: 18px !important;
 }
-
 #svg-canvas-cache {
   display: none;
 }
@@ -172,26 +171,30 @@ text {
 }
 #print-btn {
   width: auto;
-  height: 25px;
+  height: 27px;
+  color: black;
   font-size: 16px;
-  padding: 2px;
-  border: 1px solid gray;
+  font-weight: bolder;
+  font-family: monospace;
+  border: 2px solid gray;
   border-radius: 5px;
   position: fixed;
-  bottom: 5px;
-  right: 150px;
+  bottom: 2px;
+  right: 125px;
   background-color: white;
 }
 #dateInput {
-  width: auto;
-  height: 25px;
+  width: 120px;
+  height: 27px;
   font-size: 16px;
-  padding: 2px;
-  border: 1px solid gray;
+  color: black;
+  font-weight: bold;
+  font-family: monospace;
+  border: 2px solid gray;
   border-radius: 5px;
   position: fixed;
-  bottom: 5px;
-  right: 5px;
+  bottom: 2px;
+  right: 1px;
 }
 #formattedDateLink {
   font-size: 22px;
