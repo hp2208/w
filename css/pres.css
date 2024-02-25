@@ -21,7 +21,7 @@
   }
   .canvasDiv {
     width: calc(60vw - 3px);
-    height: 97vh;
+    height: calc(95vh - 2px);
     left: calc(40vw + 2px);
   }
 }
@@ -37,7 +37,7 @@ body {
 }
 /* Style the div elements */
 .bigGuy {
-  height: calc(100vh - 2px);
+  height: calc(95vh - 2px);
   border: 2px solid gray;
   border-radius: 5px;
   position: fixed;
@@ -45,7 +45,6 @@ body {
   left: 1px;
 }
 .canvasDiv {
-  height: calc(100vh - 2px);
   border: 2px solid gray;
   border-radius: 5px;
   position: fixed;
@@ -179,7 +178,7 @@ text {
   border: 2px solid gray;
   border-radius: 5px;
   position: fixed;
-  bottom: 2px;
+  bottom: calc(5vh + 1px);
   right: 145px;
   background-color: white;
 }
@@ -193,7 +192,7 @@ text {
   border: 2px solid gray;
   border-radius: 5px;
   position: fixed;
-  bottom: 2px;
+  bottom: calc(5vh + 1px);
   right: 1px;
 }
 #formattedDateLink {
