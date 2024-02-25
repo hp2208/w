@@ -180,11 +180,11 @@ text {
   border-radius: 5px;
   position: fixed;
   bottom: 2px;
-  right: 135px;
+  right: 145px;
   background-color: white;
 }
 #dateInput {
-  width: 130px;
+  width: 140px;
   height: 27px;
   font-size: 16px;
   color: black;
