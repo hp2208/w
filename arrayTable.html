@@ -315,7 +315,7 @@ function bindTextToArray(inputText) {
         a099.push([currentHeader, ...values]);
       } else if(values[0]>=100&&values[0]<=599) {
         a100599.push([currentHeader, ...values]);
-      } else if(values[0]>=600&&values[0]<=899) {
+      }/* else if(values[0]>=600&&values[0]<=899) {
         if(values[1]<=299) {
           a600899_299.push([currentHeader, ...values]);
         } else {
@@ -323,7 +323,7 @@ function bindTextToArray(inputText) {
         }
       } else if(values[0]>=900&&values[0]<=999) {
         a900.push([currentHeader, ...values]);
-      } else {
+      }*/ else {
         a1000.push([currentHeader, ...values]);
       }
     }
@@ -335,14 +335,18 @@ function bindTextToArray(inputText) {
   //bigTwo = a099.concat(a100599, a600899_299, a600899_300, a900, a1000)
   //console.log("B2", bigTwo);
 
-  bigOne = sortMergeArray(a099, 2, 1, 4, 0, 3)
+  /*bigOne = sortMergeArray(a099, 2, 1, 4, 0, 3)
     .concat([["-"]],
             sortMergeArray(a600899_300, 1, 2, 4, 0, 3),
             sortMergeArray(a1000, 1, 2, 4, 0, 3),[["-"]],
             sortMergeArray(a600899_299, 1, 2, 4, 0, 3),
             sortMergeArray(a900, 1, 2, 4, 0, 3),[["-"]],
-            sortMergeArray(a100599, 1, 2, 4, 0, 3));
+            sortMergeArray(a100599, 1, 2, 4, 0, 3)); */
   //console.log("B1", bigOne);
+    bigOne = bigOne = sortMergeArray(a099, 2, 1, 4, 0, 3)
+    .concat([["-"]],
+            sortMergeArray(a1000, 1, 2, 4, 0, 3),[["-"]],
+            sortMergeArray(a100599, 1, 2, 4, 0, 3));
   return bigOne;
 
 }
